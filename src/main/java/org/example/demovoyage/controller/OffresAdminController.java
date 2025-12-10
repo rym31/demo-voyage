@@ -11,11 +11,11 @@ import java.util.List;
 @RequestMapping("/api/admin/offres")
 public class OffresAdminController {
 
-    private final OffreService offresService;
+    private final OffresService offresService;
 
-    public OffresAdminController (OffreService offreService){
+    public OffresAdminController (OffresService offresService){
 
-        this.offresService = offreService;
+        this.offresService = offresService;
 
     }
 
