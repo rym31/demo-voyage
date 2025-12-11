@@ -1,7 +1,7 @@
 package org.example.demovoyage.controller;
 
 import org.example.demovoyage.entity.Offre;
-import org.example.demovoyage.service.OffreService;
+import org.example.demovoyage.service.OffresService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,9 +13,9 @@ public class OffresAdminController {
 
     private final OffresService offresService;
 
-    public OffresAdminController (OffresService offresService){
+    public OffresAdminController (OffresService offreService){
 
-        this.offresService = offresService;
+        this.offresService = offreService;
 
     }
 
@@ -37,4 +37,22 @@ public class OffresAdminController {
                 offresService.createOffre(id, trajetId, operateurId, depart, prixBase)
         );
     }
+
+    @PutMapping("/update")
+    public ResponseEntity<Offre> updateOffre(
+            @RequestParam int id,
+            @RequestParam int trajetId,
+            @RequestParam int operateurId,
+            @RequestParam String depart,
+            @RequestParam double prixBase
+    ) {
+        return ResponseEntity.ok(
+                offresService.createOffre(id, trajetId, operateurId, depart, prixBase)
+        );
+    }
+    @DeleteMapping("/supprimer")
+    public void delete (@RequestParam int id){
+        offresService.deleteOffre(id);
+    }
 }
+
