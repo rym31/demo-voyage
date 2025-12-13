@@ -4,6 +4,7 @@ import org.example.demovoyage.entity.Offre;
 import org.example.demovoyage.service.OffresService;
 import org.example.demovoyage.service.OffresClientService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.*;
 
 import java.util.List;
 
